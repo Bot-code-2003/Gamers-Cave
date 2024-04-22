@@ -1,0 +1,27 @@
+.navbar {
+  padding: 30px 10px;
+  background-color: rgb(23, 45, 0);
+}
+
+.hero {
+  padding: 40px 20px;
+}
+
+.content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.215);
+}
+
+.genre-container {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  padding: 20px;
+}
