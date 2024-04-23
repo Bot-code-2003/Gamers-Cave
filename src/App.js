@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import GameDetails from "./components/GameDetails";
 import "./App.css";
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route exact path="/" element={<Homepage />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
+          <Route exact path="/games/:gameId" element={<GameDetails />} />
         </Routes>
       </div>
     </>
