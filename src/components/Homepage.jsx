@@ -5,6 +5,7 @@ import { Typography } from "antd";
 import { Button, Flex } from "antd";
 import Topcards from "./Topcards";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   return (
@@ -32,9 +33,13 @@ const Homepage = () => {
             <Col span={12}>
               <Flex gap={10}>
                 <Button size="large" type="primary">
+                  <Link to='https://rawg.io/apidocs' target="_blank">
                   Api Documentation
+                  </Link>
                 </Button>
-                <Button size="large">GitHub</Button>
+                <Button size="large">
+                  <Link to='https://github.com/Bot-code-2003' target="_blank">GitHub</Link>
+                </Button>
               </Flex>
             </Col>
           </Row>

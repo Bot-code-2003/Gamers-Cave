@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { Select, Input, Button, Row, Col } from "antd";
 import "./Styles.css";
@@ -28,27 +28,38 @@ const Navbar = () => {
     { key: "18", name: "Casual" },
     { key: "19", name: "Music" },
   ];
+  const handleOptionClick = (event) => {
+    const { id } = event.target;
+    if (id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <nav className="navbar">
       <Row>
-        <Col span={5} style={{ display: "flex", justifyContent: "center" }}>
-          <Select
-            textAlign="center"
-            size="large"
-            mode="multiple"
-            placeholder="Select Genre"
-            style={{ width: "80%" }}
+        <Col span={10} style={{ display: "flex", justifyContent: "center" }}>
+        <Select
+      
+      style={{ width: '90%' }}
+      placeholder="Search to Select"
+      >
+      {options.map((option) => (
+        <Option key={option.key} value={option.key}>
+          
+          <a
+          onClick={handleOptionClick}
+            id={option.name}
+            style={{ display: 'block', marginBottom: '8px', fontSize: '16px', color: '#1890ff' }}
           >
-            {options.map((option) => (
-              <Option key={option.key} value={option.key}>
-                {option.name}
-              </Option>
-            ))}
-          </Select>
-        </Col>
-        <Col span={5} style={{ display: "flex", justifyContent: "center" }}>
-          <Input size="large" placeholder="Search" style={{ width: "80%" }} />
+            {option.name}
+          </a>
+        </Option>
+      ))}
+    </Select>
         </Col>
         <Col span={8}>
           <Typography.Title
